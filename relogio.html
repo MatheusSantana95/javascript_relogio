@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio Digital</title>
+    <script type="text/javascript">
+    function relogio(){
+        let data = new Date();
+        let horas = data.getHours();
+        let minutos = data.getMinutes();
+        let segundos = data.getSeconds();
+
+        if(horas < 10){
+        horas = "0"+horas;
+        }
+        if(minutos < 10){
+        minutos = "0"+minutos;
+        }
+        if(segundos < 10){
+        segundos = "0"+segundos;
+        }
+        document.getElementById("relogio").innerHTML=horas+":"+minutos+":"+segundos;
+    }
+    window.setInterval("relogio()",1000);
+    </script>
+    <style type="text/css">
+    body{
+        background-color: black;
+    }
+    h1{
+        color:white;
+        font: bold 30px arial;
+        text-align: center;
+        
+    }
+    h2{
+        color:white;
+        font: bold 30px arial;
+        text-align: center; 
+    }
+        #relogio{
+        color:#f90;
+        font: bold 150px arial;
+        position: absolute;
+        top: 50%;
+	    left: 50%;
+        margin: -150px 0 0 -300px;
+
+    
+    }
+    </style>
+
+</head>
+<body onload="relogio() ;">
+    <h1>Relógio Digital</h1>
+    <h2>Horário de Brasília</h2>
+<div id="relogio"></div>
+</body>
+
+</html>
